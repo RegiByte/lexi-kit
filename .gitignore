@@ -8,6 +8,7 @@ test-output.*
 storybook-static
 .env
 .eslintcache
+coverage/
 
 # Yarn 2 build artifacts
 # https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
