@@ -1,0 +1,30 @@
+{
+  "name": "@lexi-kit/utils",
+  "version": "0.0.3-next.1",
+  "description": "",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "version": "pnpm version"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lexical/react": "^0.10.0",
+    "@lexical/selection": "^0.10.0"
+  },
+  "peerDependencies": {
+    "lexical": ">=0.10.x",
+    "react": ">=17.x",
+    "react-dom": ">=17.x"
+  }
+}
