@@ -43,10 +43,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies and publish
-        run: pnpm install && pnpm run publish:next
+      - name: Install dependencies
+        run: pnpm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit release candidate
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Publish updated lockfile'
 
       - name: Branch protection OFF
         run: |
@@ -55,6 +60,10 @@ jobs:
           --header 'Authorization: token ${{ secrets.PAT_CHANGE_BRANCH_PROTECTION_RULES }}' \
           --data '{"required_status_checks":null,"enforce_admins":false,"required_pull_request_reviews":null,"restrictions":null}'
 
+      - name: Publish
+        run: pnpm run publish:next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit release candidate
         uses: stefanzweifel/git-auto-commit-action@v4
