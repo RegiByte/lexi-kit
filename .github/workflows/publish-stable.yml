@@ -1,0 +1,77 @@
+name: 'Publish Stable version'
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  publish-rc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit release candidate
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Publish updated lockfile'
+
+      - name: Branch protection OFF
+        run: |
+          curl --request PUT \
+          --url 'https://api.github.com/repos/${{ github.repository }}/branches/main/protection' \
+          --header 'Authorization: token ${{ secrets.PAT_CHANGE_BRANCH_PROTECTION_RULES }}' \
+          --data '{"required_status_checks":null,"enforce_admins":false,"required_pull_request_reviews":null,"restrictions":null}'
+
+      - name: Publish
+        run: pnpm run publish:stable
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit release candidate
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Publish stable version'
+
+      # https://docs.github.com/en/rest/reference/repos#update-branch-protection-preview-notices
+      - name: Branch protection ON
+        run: |
+          curl --request PUT \
+          --url 'https://api.github.com/repos/${{ github.repository }}/branches/main/protection' \
+          --header 'Authorization: token ${{ secrets.PAT_CHANGE_BRANCH_PROTECTION_RULES }}' \
+          --header 'Accept: application/vnd.github.luke-cage-preview+json' \
+          --data '{"required_status_checks":{"strict":false,"contexts":[]},"enforce_admins":false,"required_pull_request_reviews":{"require_code_owner_reviews":true,"required_approving_review_count":1},"restrictions":null}'
