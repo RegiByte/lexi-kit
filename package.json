@@ -60,29 +60,6 @@
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "roots": [
-      "<rootDir>/packages"
-    ],
-    "testMatch": [
-      "**/?(*.)+(test).+(ts|tsx|js)"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
-    },
-    "moduleNameMapper": {
-      "@lexi-kit/(.+)$": "<rootDir>/packages/react/$1/src"
-    },
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/scripts/setup-tests.ts",
-      "jest-axe/extend-expect"
-    ]
-  },
   "prettier": {
     "printWidth": 100,
     "singleQuote": true

@@ -134,6 +134,24 @@ importers:
         specifier: '>=17.x'
         version: 17.0.0(react@17.0.0)
 
+  packages/react/utils:
+    dependencies:
+      '@lexical/react':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)(react-dom@17.0.0)(react@17.0.0)(yjs@13.6.1)
+      '@lexical/selection':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      lexical:
+        specifier: '>=0.10.x'
+        version: 0.10.0
+      react:
+        specifier: '>=17.x'
+        version: 17.0.0
+      react-dom:
+        specifier: '>=17.x'
+        version: 17.0.0(react@17.0.0)
+
 packages:
 
   /@adobe/css-tools@4.2.0:
