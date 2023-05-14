@@ -1,0 +1,136 @@
+{
+  "name": "lexi-kit",
+  "version": "1.0.0",
+  "description": "A component kit for lexical framework. Build the editor that you want, not the one you're given.",
+  "scripts": {
+    "lint": "eslint packages --ext .js,.ts,.tsx",
+    "types:check": "tsc --skipLibCheck --noEmit",
+    "test": "jest",
+    "test:ci": "pnpm run types:check && jest --ci --coverage",
+    "build": "pnpm run build:config && pnpm run build:packages && pnpm run build:cleanup",
+    "build:config": "mv tsconfig.json tsconfig.tmp.json && mv tsconfig.production.json tsconfig.json",
+    "build:packages": "parcel build 'packages/*/*/' --no-cache && pnpm run build:fix-type-defs",
+    "build:fix-type-defs": "node ./scripts/fix-type-defs-imports",
+    "build:cleanup": "mv tsconfig.json tsconfig.production.json && mv tsconfig.tmp.json tsconfig.json",
+    "bump:stable": "pnpm --filter '!lexi-kit' recursive exec -- npm version patch",
+    "bump:next": "pnpm --filter '!lexi-kit' recursive exec -- npm version prerelease --preid=next",
+    "clean": "pnpm --filter '!lexi-kit' recursive exec -- pnpm run clean",
+    "publish:stable": "pnpm bump:stable && pnpm clean && pnpm build && pnpm --filter '!lexi-kit' publish --access public",
+    "publish:next": "pnpm bump:next && pnpm clean && pnpm build && pnpm --filter '!lexi-kit' publish --access public --tag next"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-transform-typescript": "^7.21.3",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/template": "^7.20.7",
+    "@parcel/babel-plugin-transform-runtime": "^2.8.3",
+    "@parcel/babel-preset-env": "^2.8.3",
+    "@parcel/packager-ts": "^2.8.3",
+    "@parcel/transformer-typescript-types": "^2.8.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/babel__template": "^7.4.1",
+    "@types/eslint": "^8.37.0",
+    "@types/jest": "^29.5.1",
+    "@types/jest-axe": "^3.5.5",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^9.1.2",
+    "eslint": "^8.40.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.5.0",
+    "jest-axe": "^7.0.1",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-watch-typeahead": "^2.2.2",
+    "parcel": "^2.8.3",
+    "prettier": "^2.8.8",
+    "replace-in-files": "^3.0.0",
+    "standard-version": "^9.5.0",
+    "ts-jest": "^29.1.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "roots": [
+      "<rootDir>/packages"
+    ],
+    "testMatch": [
+      "**/?(*.)+(test).+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "@lexi-kit/(.+)$": "<rootDir>/packages/react/$1/src"
+    },
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/scripts/setup-tests.ts",
+      "jest-axe/extend-expect"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+      "jsx-a11y"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "import/no-anonymous-default-export": [
+        1,
+        {
+          "allowObject": true
+        }
+      ],
+      "react/jsx-pascal-case": [
+        2,
+        {
+          "allowNamespace": true
+        }
+      ],
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "prefer-const": [
+        1,
+        {
+          "destructuring": "all"
+        }
+      ],
+      "jsx-a11y/label-has-associated-control": [
+        2,
+        {
+          "controlComponents": [
+            "Checkbox"
+          ],
+          "depth": 3
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "dist"
+  ]
+}
