@@ -1,6 +1,6 @@
 {
   "name": "@lexi-kit/shared-context",
-  "version": "0.0.3-next.4",
+  "version": "0.0.3",
   "description": "",
   "source": "src/index.ts",
   "main": "dist/index.js",
