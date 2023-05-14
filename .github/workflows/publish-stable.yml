@@ -45,10 +45,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Commit release candidate
+      - name: Commit release stable version
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Publish updated lockfile'
+          commit_message: 'Publish updated stable lockfile'
+          branch: main
 
       - name: Branch protection OFF
         run: |
@@ -62,10 +63,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Commit release candidate
+      - name: Commit published stable version
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'Publish stable version'
+          branch: main
 
       # https://docs.github.com/en/rest/reference/repos#update-branch-protection-preview-notices
       - name: Branch protection ON
