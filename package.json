@@ -16,7 +16,9 @@
     "bump:next": "pnpm --filter '!lexi-kit' recursive exec -- npm version prerelease --preid=next",
     "clean": "pnpm --filter '!lexi-kit' recursive exec -- pnpm run clean",
     "publish:stable": "pnpm bump:stable && pnpm clean && pnpm build && pnpm --filter '!lexi-kit' publish --access public",
-    "publish:next": "pnpm bump:next && pnpm clean && pnpm build && pnpm --filter '!lexi-kit' publish --access public --tag next"
+    "publish:next": "pnpm bump:next && pnpm clean && pnpm build && pnpm --filter '!lexi-kit' publish --access public --tag next",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "",
   "license": "ISC",
@@ -30,6 +32,14 @@
     "@parcel/babel-preset-env": "^2.8.3",
     "@parcel/packager-ts": "^2.8.3",
     "@parcel/transformer-typescript-types": "^2.8.3",
+    "@storybook/addon-essentials": "^7.0.11",
+    "@storybook/addon-interactions": "^7.0.11",
+    "@storybook/addon-links": "^7.0.11",
+    "@storybook/addon-storysource": "^7.0.11",
+    "@storybook/blocks": "^7.0.11",
+    "@storybook/react": "^7.0.11",
+    "@storybook/react-vite": "^7.0.11",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/babel__template": "^7.4.1",
@@ -55,14 +65,24 @@
     "jest-watch-typeahead": "^2.2.2",
     "parcel": "^2.8.3",
     "prettier": "^2.8.8",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "replace-in-files": "^3.0.0",
     "standard-version": "^9.5.0",
+    "storybook": "^7.0.11",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   },
   "prettier": {
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "singleQuote": false,
+    "jsxSingleQuote": false,
+    "bracketSameLine": true,
+    "trailingComma": "all",
     "printWidth": 100,
-    "singleQuote": true
+    "quoteProps": "consistent"
   },
   "eslintConfig": {
     "extends": [
