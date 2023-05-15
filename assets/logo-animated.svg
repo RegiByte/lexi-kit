@@ -16,29 +16,34 @@
 </style>
     <path class="st0" d="M498.56,411.1"/>
     <g>
-    <linearGradient id="SVGID_CUSTOM_" gradientUnits="userSpaceOnUse" x1="50%" y1="0%" x2="50%" y2="100%">
-        <stop offset="0" id="SVGID_1_SC_2" style="stop-color:#95C11F">
-          <animate attributeName="offset" from="0" to=".7" repeatCount="indefinite" dur="6s" fill="freeze"/>
-        </stop>
-        <stop offset="0.75" id="SVGID_1_SC_1" style="stop-color:#000000">
-          <animate attributeName="offset" from="0.2" to="0.75" repeatCount="indefinite" dur="6s" fill="freeze"/>
-        </stop>
-        <stop offset="1" id="SVGID_1_SC_1" style="stop-color:#000000">
-        </stop>
-	</linearGradient>
-    <linearGradient id="SVGID_CUSTOM_2_" gradientUnits="userSpaceOnUse" x1="50%" y1="100%" x2="50%" y2="0%">
-        <stop offset="0" id="SVGID_1_SC_2" style="stop-color:#fbbf24">
-          <animate attributeName="offset" from="0" to="0.5" repeatCount="indefinite" dur="6s" fill="freeze"/>
-        </stop>
-        <stop offset="0.75" id="SVGID_1_SC_1" style="stop-color:#000000">
-          <animate attributeName="offset" from="0.2" to="0.75" repeatCount="indefinite" dur="6s" fill="freeze"/>
-        </stop>
-        <stop offset="1" id="SVGID_1_SC_1" style="stop-color:#000000">
-        </stop>
-	</linearGradient>
-	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="313.5366" y1="568.662" x2="311.9542" y2="325.761">
+ <linearGradient id="SVGID_CUSTOM_" gradientUnits="userSpaceOnUse" x1="50%" y1="0%" x2="50%" y2="100%">
+    <stop offset="0" id="SVGID_1_SC_2" style="stop-color:#95C11F">
+        <animate attributeName="offset" values="0;.7;0" calcMode="linear" repeatCount="indefinite" dur="6s"
+                 fill="freeze"/>
+    </stop>
+     <stop offset="0.75" id="SVGID_1_SC_1" style="stop-color:#000000">
+        <animate attributeName="offset" values="0.2;0.75;0.2" calcMode="linear" repeatCount="indefinite" dur="6s"
+                 fill="freeze"/>
+    </stop>
+     <stop offset="1" id="SVGID_1_SC_1" style="stop-color:#000000">
+    </stop>
+</linearGradient>
+        <linearGradient id="SVGID_CUSTOM_2_" gradientUnits="userSpaceOnUse" x1="50%" y1="100%" x2="50%" y2="0%">
+    <stop offset="0" id="SVGID_1_SC_2" style="stop-color:#fbbf24">
+        <animate attributeName="offset" values="0;0.5;0" calcMode="linear" repeatCount="indefinite" dur="6s"
+                 fill="freeze"/>
+    </stop>
+            <stop offset="0.75" id="SVGID_1_SC_1" style="stop-color:#000000">
+        <animate attributeName="offset" values="0.2;0.75;0.2" calcMode="linear" repeatCount="indefinite" dur="6s"
+                 fill="freeze"/>
+    </stop>
+            <stop offset="1" id="SVGID_1_SC_1" style="stop-color:#000000">
+    </stop>
+</linearGradient>
+        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="313.5366" y1="568.662" x2="311.9542"
+                        y2="325.761">
 		<stop offset="0" id="SVGID_1_SC_1" style="stop-color:#000000"/>
-        <stop offset="1" id="SVGID_1_SC_2" style="stop-color:#95C11F"/>
+            <stop offset="1" id="SVGID_1_SC_2" style="stop-color:#95C11F"/>
 	</linearGradient>
         <path class="st1" d="M306.81,239.1v72.44h9V239.1c4.97-1.84,8.52-6.62,8.52-12.22c0-7.18-5.84-13.02-13.02-13.02
 		s-13.02,5.84-13.02,13.02C298.29,232.48,301.84,237.26,306.81,239.1z M311.31,219.86c3.87,0,7.02,3.15,7.02,7.02
@@ -132,11 +137,12 @@
     <g>
 	<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="308.7589" y1="672.5311" x2="313.021" y2="178.1289">
 		<stop offset="0" id="INNER_RING_ST_1" style="stop-color:#000000">
-          <animate attributeName="offset" from="1" to="0" repeatCount="indefinite" dur="6s" fill="freeze"/>
+          <animate attributeName="offset" values="1;0;1" calcMode="linear" repeatCount="indefinite" dur="6s" fill="freeze"/>
         </stop>
         <stop offset="1" id="INNER_RING_ST_2" style="stop-color:#95C11F">
-          <animate attributeName="offset" from="1.1" to="0.25" repeatCount="indefinite" dur="6s" fill="freeze"/>
-            <animate attributeName="stop-color" from="#fbbf24" to="#95C11F" repeatCount="indefinite" dur="6s" fill="freeze"/>
+          <animate attributeName="offset" values="1.1;0.25;1.1" calcMode="linear" repeatCount="indefinite" dur="6s" fill="freeze"/>
+            <animate attributeName="stop-color" values="#fbbf24;#95C11F;#fbbf24" calcMode="linear" repeatCount="indefinite" dur="6s"
+                     fill="freeze"/>
             </stop>
 	</linearGradient>
         <path class="st6" d="M485.69,250.52c-46.69-46.69-108.77-72.4-174.8-72.4s-128.11,25.71-174.8,72.4
@@ -146,11 +152,12 @@
         <linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="309.5908" y1="659.5215" x2="313.6293"
                         y2="191.0484">
 		<stop offset="0" id="INNER_RING_ST_1" style="stop-color:#000000">
-          <animate attributeName="offset" from="1" to="0" repeatCount="indefinite" dur="6s" fill="freeze"/>
+          <animate attributeName="offset" values="1;0;1" calcMode="linear" repeatCount="indefinite" dur="6s" fill="freeze"/>
         </stop>
             <stop offset="1" id="INNER_RING_ST_2" style="stop-color:#95C11F">
-          <animate attributeName="offset" from="1.1" to="0.25" repeatCount="indefinite" dur="6s" fill="freeze"/>
-          <animate attributeName="stop-color" from="#fbbf24" to="#95C11F" repeatCount="indefinite" dur="6s" fill="freeze"/>
+          <animate attributeName="offset" values="1.1;0.25;1.1" calcMode="linear" repeatCount="indefinite" dur="6s" fill="freeze"/>
+                <animate attributeName="stop-color" values="#95C11F;#fbbf24;#95C11F" calcMode="linear" repeatCount="indefinite" dur="6s"
+                         fill="freeze"/>
             </stop>
 	</linearGradient>
         <path class="st7" d="M477.25,259.65c-44.24-44.25-103.07-68.61-165.64-68.61s-121.4,24.36-165.64,68.61
