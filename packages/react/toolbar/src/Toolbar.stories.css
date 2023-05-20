@@ -1,0 +1,55 @@
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #c2c2c2;
+    border-radius: 6px;
+    padding: 4px 6px;
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll {
+    overflow: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.separator {
+    display: inline-flex;
+    width: 1px;
+    height: 24px;
+    background-color: #5a5a5a;
+    margin: 0 8px;
+}
+
+.toolbar .button, .toolbar .formatting-button {
+    margin: 0 4px;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.content {
+    background: lightgray;
+    padding: 4px 8px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
