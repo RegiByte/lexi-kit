@@ -13,6 +13,9 @@ importers:
       '@babel/preset-react':
         specifier: ^7.18.6
         version: 7.18.6(@babel/core@7.21.8)
+      '@babel/runtime':
+        specifier: ^7.21.5
+        version: 7.21.5
       '@babel/template':
         specifier: ^7.20.7
         version: 7.20.7
@@ -169,6 +172,45 @@ importers:
       react-dom:
         specifier: '>=17.x'
         version: 17.0.0(react@17.0.0)
+
+  packages/react/toolbar:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.21.5
+        version: 7.21.5
+      '@lexi-kit/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@lexical/code':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/link':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/react':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.1)
+      '@lexical/rich-text':
+        specifier: ^0.10.0
+        version: 0.10.0(@lexical/clipboard@0.10.0)(@lexical/selection@0.10.0)(@lexical/utils@0.10.0)(lexical@0.10.0)
+      '@lexical/selection':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/utils':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
+      lexical:
+        specifier: '>=0.10.x'
+        version: 0.10.0
+      react:
+        specifier: '>=17.x'
+        version: 18.2.0
+      react-dom:
+        specifier: '>=17.x'
+        version: 18.2.0(react@18.2.0)
 
   packages/react/utils:
     dependencies:
@@ -2354,6 +2396,38 @@ packages:
       react: 17.0.0
       react-dom: 17.0.0(react@17.0.0)
       react-error-boundary: 3.1.4(react@17.0.0)
+    transitivePeerDependencies:
+      - yjs
+    dev: false
+
+  /@lexical/react@0.10.0(lexical@0.10.0)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.1):
+    resolution: {integrity: sha512-7Ql/Y3FZSsPSCObT58CYRUd4tQzKL2U8B1xO0KXZBUbj+sO6gpNbc7/Y7MiZwCQzVNwP84j7mwkXQ1EnUBS52A==}
+    peerDependencies:
+      lexical: 0.10.0
+      react: '>=17.x'
+      react-dom: '>=17.x'
+    dependencies:
+      '@lexical/clipboard': 0.10.0(lexical@0.10.0)
+      '@lexical/code': 0.10.0(lexical@0.10.0)
+      '@lexical/dragon': 0.10.0(lexical@0.10.0)
+      '@lexical/hashtag': 0.10.0(lexical@0.10.0)
+      '@lexical/history': 0.10.0(lexical@0.10.0)
+      '@lexical/link': 0.10.0(lexical@0.10.0)
+      '@lexical/list': 0.10.0(lexical@0.10.0)
+      '@lexical/mark': 0.10.0(lexical@0.10.0)
+      '@lexical/markdown': 0.10.0(@lexical/clipboard@0.10.0)(@lexical/selection@0.10.0)(lexical@0.10.0)
+      '@lexical/overflow': 0.10.0(lexical@0.10.0)
+      '@lexical/plain-text': 0.10.0(@lexical/clipboard@0.10.0)(@lexical/selection@0.10.0)(@lexical/utils@0.10.0)(lexical@0.10.0)
+      '@lexical/rich-text': 0.10.0(@lexical/clipboard@0.10.0)(@lexical/selection@0.10.0)(@lexical/utils@0.10.0)(lexical@0.10.0)
+      '@lexical/selection': 0.10.0(lexical@0.10.0)
+      '@lexical/table': 0.10.0(lexical@0.10.0)
+      '@lexical/text': 0.10.0(lexical@0.10.0)
+      '@lexical/utils': 0.10.0(lexical@0.10.0)
+      '@lexical/yjs': 0.10.0(lexical@0.10.0)(yjs@13.6.1)
+      lexical: 0.10.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-error-boundary: 3.1.4(react@18.2.0)
     transitivePeerDependencies:
       - yjs
     dev: false
@@ -5794,6 +5868,10 @@ packages:
   /cjs-module-lexer@1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
     dev: true
+
+  /classnames@2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -10440,7 +10518,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-    dev: true
 
   /react-element-to-jsx-string@15.0.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-UDg4lXB6BzlobN60P8fHWVPX3Kyw8ORrTeBtClmIlGdkOOE+GYQSFvmEU5iLLpwp/6v42DINwNcwOhOLfQ//FQ==}
@@ -10463,6 +10540,16 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.5
       react: 17.0.0
+    dev: false
+
+  /react-error-boundary@3.1.4(react@18.2.0):
+    resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}
+    engines: {node: '>=10', npm: '>=6'}
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      '@babel/runtime': 7.21.5
+      react: 18.2.0
     dev: false
 
   /react-error-overlay@6.0.9:
@@ -10529,7 +10616,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: true
 
   /read-pkg-up@3.0.0:
     resolution: {integrity: sha512-YFzFrVvpC6frF1sz8psoHDBGF7fLPc+llq/8NB43oagqWkx8ar5zYtsTORtOjw9W2RHLpWP+zTWwBvf1bCmcSw==}
@@ -10848,7 +10934,6 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
-    dev: true
 
   /schema-utils@3.1.2:
     resolution: {integrity: sha512-pvjEHOgWc9OWA/f/DE3ohBWTD6EleVLf7iFUkoSwAxttdBhB9QUebQgxER2kWueOvRJXPHNnyrvvh9eZINB8Eg==}
