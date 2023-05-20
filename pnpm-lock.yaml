@@ -175,6 +175,9 @@ importers:
 
   packages/react/toolbar:
     dependencies:
+      '@babel/runtime':
+        specifier: ^7.21.5
+        version: 7.21.5
       '@lexi-kit/utils':
         specifier: workspace:*
         version: link:../utils
@@ -208,10 +211,6 @@ importers:
       react-dom:
         specifier: '>=17.x'
         version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@babel/runtime':
-        specifier: ^7.21.5
-        version: 7.21.5
 
   packages/react/utils:
     dependencies:
