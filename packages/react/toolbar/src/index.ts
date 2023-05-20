@@ -3,17 +3,11 @@ export {
   ToolbarButton,
   ToolbarSeparator,
   ToolbarFormattingButton,
-  ToolbarDropdown,
-  ToolbarDropdownItem,
-  ToolbarDropdownSeparator,
   //
   Root,
   Button,
   Separator,
   FormattingButton,
-  Dropdown,
-  DropdownItem,
-  DropdownSeparator,
 } from "./Toolbar";
 export type {
   ToolbarProps,

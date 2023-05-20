@@ -152,49 +152,22 @@ const ToolbarFormattingButton = React.forwardRef<
   );
 });
 
-/* -------------------------------------------------------------------------------------------------
- * ToolbarDropdown
- * -----------------------------------------------------------------------------------------------*/
-
-const ToolbarDropdown = () => <div></div>;
-
-/* -------------------------------------------------------------------------------------------------
- * ToolbarDropdownItem
- * -----------------------------------------------------------------------------------------------*/
-
-const ToolbarDropdownItem = () => <div></div>;
-
-/* -------------------------------------------------------------------------------------------------
- * ToolbarDropdownSeparator
- * -----------------------------------------------------------------------------------------------*/
-
-const ToolbarDropdownSeparator = () => <div></div>;
-
 const Root = Toolbar;
 const Button = ToolbarButton;
 const Separator = ToolbarSeparator;
 const FormattingButton = ToolbarFormattingButton;
-const Dropdown = ToolbarDropdown;
-const DropdownItem = ToolbarDropdownItem;
-const DropdownSeparator = ToolbarDropdownSeparator;
 
 export {
   Root,
   Button,
   Separator,
   FormattingButton,
-  Dropdown,
-  DropdownItem,
-  DropdownSeparator,
 
   //
   Toolbar,
   ToolbarButton,
   ToolbarSeparator,
   ToolbarFormattingButton,
-  ToolbarDropdown,
-  ToolbarDropdownItem,
-  ToolbarDropdownSeparator,
 };
 
 export type {
