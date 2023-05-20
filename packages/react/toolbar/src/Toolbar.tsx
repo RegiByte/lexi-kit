@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, PropsWithChildren, useCallback } from "react";
+import React, { PropsWithChildren, useCallback } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import classNames from "classnames";
 import { TextFormattingState } from "./types";
@@ -8,7 +8,7 @@ import { useTextFormattingAction } from "./useTextFormattingAction";
  * Toolbar
  * -----------------------------------------------------------------------------------------------*/
 
-interface ToolbarProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+interface ToolbarProps extends PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   orientation?: "horizontal" | "vertical";
   loop?: boolean;
   dir?: "ltr" | "rtl";
@@ -40,7 +40,7 @@ const Toolbar = React.forwardRef<ToolbarElement, ToolbarProps>(
 
 type ToolbarButtonElement = React.ElementRef<"button">;
 
-interface ToolbarButtonProps extends PropsWithChildren<HTMLAttributes<HTMLButtonElement>> {}
+interface ToolbarButtonProps extends PropsWithChildren<React.HTMLAttributes<HTMLButtonElement>> {}
 
 const ToolbarButton = React.forwardRef<ToolbarButtonElement, ToolbarButtonProps>(
   (props: ToolbarButtonProps, forwardedRef) => {
@@ -55,7 +55,7 @@ const ToolbarButton = React.forwardRef<ToolbarButtonElement, ToolbarButtonProps>
  * ToolbarSeparator
  * -----------------------------------------------------------------------------------------------*/
 
-interface ToolbarSeparatorProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+interface ToolbarSeparatorProps extends PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   /**
    * Either `vertical` or `horizontal`. Defaults to `vertical`.
    */

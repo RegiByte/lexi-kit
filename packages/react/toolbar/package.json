@@ -29,8 +29,11 @@
     "classnames": "^2.3.2"
   },
   "peerDependencies": {
+    "@babel/runtime": "^7.21.5",
     "lexical": ">=0.10.x",
     "react": ">=17.x",
     "react-dom": ">=17.x"
+  },
+  "devDependencies": {
   }
 }
