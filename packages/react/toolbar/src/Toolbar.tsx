@@ -5,6 +5,7 @@ import { TextFormattingState } from "./types";
 import { useTextFormattingAction } from "./useTextFormattingAction";
 import { EditorThemeClasses } from "lexical";
 import { ToolbarTheme } from "./theme";
+import { useTextFormattingStates } from "./useTextFormattingStates";
 
 /* -------------------------------------------------------------------------------------------------
  * Toolbar
@@ -170,6 +171,8 @@ const ToolbarFormattingButton = React.forwardRef<
   } = props;
   const [editor, ctx] = useLexicalComposerContext();
   const handleFormat = useTextFormattingAction(format, editor);
+  const [_, activeStates] = useTextFormattingStates(editor);
+  const isActive = activeStates.includes(format);
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       handleFormat();
@@ -188,6 +191,8 @@ const ToolbarFormattingButton = React.forwardRef<
     <button
       type="button"
       {...buttonProps}
+      data-active={isActive ? "true" : "false"}
+      aria-selected={isActive ? "true" : "false"}
       className={className}
       onClick={handleClick}
       ref={forwardedRef}

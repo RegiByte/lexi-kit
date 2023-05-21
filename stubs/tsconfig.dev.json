@@ -7,6 +7,7 @@
       "@lexi-kit/theme": ["./packages/react/theme/src"],
       "@lexi-kit/utils": ["./packages/react/utils/src"],
       "@lexi-kit/toolbar": ["./packages/react/toolbar/src"],
+      "@lexi-kit/floating-toolbar": ["./packages/react/floating-toolbar/src"],
     }
   }
 }

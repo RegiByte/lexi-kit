@@ -7,7 +7,7 @@
     "types:check": "tsc --skipLibCheck --noEmit",
     "test": "jest",
     "test:ci": "pnpm run types:check && jest --ci --coverage",
-    "build": "pnpm run build:config && pnpm run build:packages && pnpm run build:cleanup",
+    "build": "pnpm run build:config && pnpm run build:packages && pnpm run build:cleanup || pnpm run build:cleanup",
     "build:config": "cp stubs/tsconfig.production.json tsconfig.json",
     "build:packages": "parcel build 'packages/*/*/' --no-cache && pnpm run build:fix-type-defs",
     "build:fix-type-defs": "node ./scripts/fix-type-defs-imports",

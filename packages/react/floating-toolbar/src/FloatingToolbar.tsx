@@ -2,16 +2,17 @@ import React, { PropsWithChildren } from "react";
 import classNames from "classnames";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { EditorThemeClasses } from "lexical";
-import {
-  ToolbarButton,
-  ToolbarButtonProps,
-  ToolbarFormattingButtonProps,
-  ToolbarSeparatorProps,
-  ToolbarTheme,
-} from "@lexi-kit/toolbar";
+import { ToolbarButton } from "@lexi-kit/toolbar";
+
 import { useContentViewContext } from "@lexi-kit/shell";
 import { useFloatingToolbar } from "./useFloatingToolbar";
 import { ToolbarFormattingButton, ToolbarSeparator } from "@lexi-kit/toolbar";
+import type {
+  ToolbarFormattingButtonProps as FormattingButtonProps,
+  ToolbarSeparatorProps as SeparatorProps,
+  ToolbarButtonProps as ButtonProps,
+  ToolbarTheme,
+} from "@lexi-kit/toolbar";
 
 /* -------------------------------------------------------------------------------------------------
  * FloatingToolbar
@@ -64,7 +65,7 @@ const FloatingToolbar = React.forwardRef<FloatingToolbarElement, FloatingToolbar
  * FormattingButton
  * -----------------------------------------------------------------------------------------------*/
 
-const FormattingButton: React.FC<ToolbarFormattingButtonProps> = (props) => {
+const FormattingButton: React.FC<FormattingButtonProps> = (props) => {
   const { themeNamespace = DEFAULT_THEME_NAMESPACE, ...buttonProps } = props;
   return <ToolbarFormattingButton themeNamespace={themeNamespace} {...buttonProps} />;
 };
@@ -73,7 +74,7 @@ const FormattingButton: React.FC<ToolbarFormattingButtonProps> = (props) => {
  * FormattingButton
  * -----------------------------------------------------------------------------------------------*/
 
-const Button: React.FC<ToolbarButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const { themeNamespace = DEFAULT_THEME_NAMESPACE, ...buttonProps } = props;
   return <ToolbarButton themeNamespace={themeNamespace} {...buttonProps} />;
 };
@@ -82,7 +83,7 @@ const Button: React.FC<ToolbarButtonProps> = (props) => {
  * Separator
  * -----------------------------------------------------------------------------------------------*/
 
-const Separator: React.FC<ToolbarSeparatorProps> = (props) => {
+const Separator: React.FC<SeparatorProps> = (props) => {
   const { themeNamespace = DEFAULT_THEME_NAMESPACE, ...separatorProps } = props;
   return <ToolbarSeparator themeNamespace={themeNamespace} {...separatorProps} />;
 };
@@ -90,10 +91,10 @@ const Separator: React.FC<ToolbarSeparatorProps> = (props) => {
 const Root = FloatingToolbar;
 
 export { FloatingToolbar, Root, FormattingButton, Separator, Button };
-export type { FloatingToolbarProps, FloatingToolbarElement };
-
 export type {
-  ToolbarFormattingButtonProps as FormattingButtonProps,
-  ToolbarSeparatorProps as SeparatorProps,
-  ToolbarButtonProps as ButtonProps,
-} from "@lexi-kit/toolbar";
+  FloatingToolbarProps,
+  FloatingToolbarElement,
+  FormattingButtonProps,
+  SeparatorProps,
+  ButtonProps,
+};
