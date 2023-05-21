@@ -1,7 +1,5 @@
 # Floating Toolbar
 
-[//]: # (TODO: finish docs)
-
 This floating toolbar component is a basic implementation of a toolbar that you can use to build
 your own interactions, note that the toolbar is not a part of the editor itself, it's just a component 
 that gets rendered under the LexicalComposerContext and triggers commands/transformations to the editor state.
@@ -150,3 +148,5 @@ Styling has to be done manually.
 ```tsx
 <FloatingToolbar.Separator/>
 ```
+
+Also see the [Toolbar](../toolbar/README.md) component.
