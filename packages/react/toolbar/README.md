@@ -28,19 +28,19 @@ $ pnpm add @lexi-kit/toolbar
 ## Usage
 
 ```tsx
-import React from 'react';
-import * as Toolbar from '@lexi-kit/toolbar';
+import React from "react";
+import * as Toolbar from "@lexi-kit/toolbar";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 
 function MyToolbar() {
-  const [editor] = useLexicalComposerContext()
-  const onClickRed = useTextColorAction('red', editor)
+  const [editor] = useLexicalComposerContext();
+  const onClickRed = useTextColorAction("red", editor);
   return (
     <Toolbar.Root>
       <Toolbar.Button
         onClick={() => {
           // Do something
-          alert('Clicked!')
+          alert("Clicked!");
         }}
       >
         <ClickIcon />
@@ -54,19 +54,22 @@ function MyToolbar() {
       <Toolbar.Separator />
       <Toolbar.FormattingButton
         format="bold"
-        icon={<BoldIcon />}
-      />
+      >
+        <BoldIcon />
+      </Toolbar.FormattingButton>
       <Toolbar.FormattingButton
         format="italic"
-        icon={<ItalicIcon />}
-      />
+      >
+        <ItalicIcon />
+      </Toolbar.FormattingButton>
       <Toolbar.FormattingButton
         format="underline"
-        icon={<UnderlineIcon />}
-      />
+      >
+        <UnderlineIcon />
+      </Toolbar.FormattingButton>
 
     </Toolbar.Root>
-  )
+  );
 }
 ```
 

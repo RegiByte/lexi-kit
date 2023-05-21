@@ -1,6 +1,7 @@
 .toolbar {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     background: #c2c2c2;
     border-radius: 6px;

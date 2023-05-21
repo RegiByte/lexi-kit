@@ -92,7 +92,7 @@ export const Base: Story = {
         </Toolbar.Root>
         <div className="scroll">
           <RichTextPlugin
-            contentEditable={<ContentEditable className="content" />}
+            contentEditable={<ContentEditable translate={'no'} spellCheck={"false"} className="content" />}
             placeholder={<div>Write here ...</div>}
             ErrorBoundary={LexicalErrorBoundary}
           />
