@@ -1,2 +1,7 @@
-export { SharedHistoryContext, SharedHistoryPlugin, useSharedHistoryContext } from './SharedHistory';
-export type { HistoryContextShape } from './SharedHistory';
+export {
+  SharedHistoryProvider,
+  RawHistoryProvider,
+  SharedHistoryPlugin,
+  useSharedHistoryContext,
+} from "./SharedHistory";
+export type { HistoryContextShape } from "./SharedHistory";

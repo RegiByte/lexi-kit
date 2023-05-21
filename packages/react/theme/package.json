@@ -1,0 +1,33 @@
+{
+  "name": "@lexi-kit/theme",
+  "version": "0.0.4-next.2",
+  "description": "",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "version": "pnpm version"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "lexical": ">=0.10.x",
+    "react": ">=17.x",
+    "react-dom": ">=17.x"
+  },
+  "devDependencies": {
+    "@lexi-kit/shell": "workspace:*",
+    "@lexi-kit/toolbar": "workspace:*"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.21.5"
+  }
+}
