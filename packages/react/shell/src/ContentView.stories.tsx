@@ -38,7 +38,7 @@ const EditorComposer: React.FC<PropsWithChildren> = (props) => {
             root: "my-content-view",
             scroller: "my-content-view-scroller",
           },
-        } as EditorThemeClasses & ShellTheme,
+        } as EditorThemeClasses & {contentView:ShellTheme},
         editable: true,
         onError: (error) => {
           console.error(error);

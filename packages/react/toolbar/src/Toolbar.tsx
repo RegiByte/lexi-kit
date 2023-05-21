@@ -3,24 +3,41 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import classNames from "classnames";
 import { TextFormattingState } from "./types";
 import { useTextFormattingAction } from "./useTextFormattingAction";
+import { EditorThemeClasses } from "lexical";
+import { ToolbarTheme } from "./theme";
 
 /* -------------------------------------------------------------------------------------------------
  * Toolbar
  * -----------------------------------------------------------------------------------------------*/
 
+type BaseThemeWithToolbarTheme = EditorThemeClasses & { toolbar: ToolbarTheme };
+const DEFAULT_THEME_NAMESPACE = "toolbar";
+
 interface ToolbarProps extends PropsWithChildren<React.HTMLAttributes<HTMLDivElement>> {
   orientation?: "horizontal" | "vertical";
   loop?: boolean;
   dir?: "ltr" | "rtl";
+  /**
+   *  The namespace to use when looking up the theme values.
+   */
+  themeNamespace?: string;
 }
 
 type ToolbarElement = React.ElementRef<"div">;
 
 const Toolbar = React.forwardRef<ToolbarElement, ToolbarProps>(
   (props: ToolbarProps, forwardedRef) => {
-    const { orientation = "horizontal", dir, loop = true, className: classNameProp, ...toolbarProps } = props;
+    const {
+      orientation = "vertical",
+      dir,
+      loop = true,
+      themeNamespace = DEFAULT_THEME_NAMESPACE,
+      className: classNameProp,
+      ...toolbarProps
+    } = props;
     const [_, ctx] = useLexicalComposerContext();
-    const className = classNames(ctx.getTheme()?.toolbar?.root ?? "", classNameProp);
+    const theme = ctx.getTheme() as BaseThemeWithToolbarTheme;
+    const className = classNames(theme?.[themeNamespace]?.root ?? "", classNameProp);
     return (
       <div
         role="toolbar"
@@ -40,13 +57,23 @@ const Toolbar = React.forwardRef<ToolbarElement, ToolbarProps>(
 
 type ToolbarButtonElement = React.ElementRef<"button">;
 
-interface ToolbarButtonProps extends PropsWithChildren<React.HTMLAttributes<HTMLButtonElement>> {}
+interface ToolbarButtonProps extends PropsWithChildren<React.HTMLAttributes<HTMLButtonElement>> {
+  /**
+   *  The namespace to use when looking up the theme values.
+   */
+  themeNamespace?: string;
+}
 
 const ToolbarButton = React.forwardRef<ToolbarButtonElement, ToolbarButtonProps>(
   (props: ToolbarButtonProps, forwardedRef) => {
-    const { className: classNameProp, ...buttonProps } = props;
+    const {
+      className: classNameProp,
+      themeNamespace = DEFAULT_THEME_NAMESPACE,
+      ...buttonProps
+    } = props;
     const [_, ctx] = useLexicalComposerContext();
-    const className = classNames(ctx.getTheme()?.toolbar?.button?.default ?? "", classNameProp);
+    const theme = ctx.getTheme() as BaseThemeWithToolbarTheme;
+    const className = classNames(theme?.[themeNamespace]?.button?.default ?? "", classNameProp);
     return <button type="button" {...buttonProps} className={className} ref={forwardedRef} />;
   },
 );
@@ -65,6 +92,10 @@ interface ToolbarSeparatorProps extends PropsWithChildren<React.HTMLAttributes<H
    * are updated so that the rendered element is removed from the accessibility tree.
    */
   decorative?: boolean;
+  /**
+   *  The namespace to use when looking up the theme values.
+   */
+  themeNamespace?: string;
 }
 
 type ToolbarSeparatorElement = React.ElementRef<"div">;
@@ -81,6 +112,7 @@ const ToolbarSeparator = React.forwardRef<ToolbarSeparatorElement, ToolbarSepara
   (props: ToolbarSeparatorProps, forwardedRef) => {
     const {
       orientation: orientationProp = DEFAULT_ORIENTATION,
+      themeNamespace = DEFAULT_THEME_NAMESPACE,
       className: classNameProp,
       decorative,
       ...separatorProps
@@ -91,8 +123,9 @@ const ToolbarSeparator = React.forwardRef<ToolbarSeparatorElement, ToolbarSepara
     const semanticProps = decorative
       ? { role: "none" }
       : { "aria-orientation": ariaOrientation, "role": "separator" };
+    const theme = ctx.getTheme() as BaseThemeWithToolbarTheme;
     const className = classNames(
-      ctx.getTheme()?.toolbar?.separator?.[orientation] ?? "",
+      theme?.[themeNamespace]?.separator?.[orientation] ?? "",
       classNameProp,
     );
 
@@ -114,6 +147,10 @@ const ToolbarSeparator = React.forwardRef<ToolbarSeparatorElement, ToolbarSepara
 
 interface ToolbarFormattingButtonProps extends ToolbarButtonProps {
   format: TextFormattingState;
+  /**
+   *  The namespace to use when looking up the theme values.
+   */
+  themeNamespace?: string;
 }
 
 type ToolbarFormattingButtonElement = React.ElementRef<"button">;
@@ -124,7 +161,13 @@ const ToolbarFormattingButton = React.forwardRef<
   ToolbarFormattingButtonElement,
   ToolbarFormattingButtonProps
 >((props: ToolbarFormattingButtonProps, forwardedRef) => {
-  const { format, onClick = DEFAULT_ON_CLICK, className: classNameProp, ...buttonProps } = props;
+  const {
+    format,
+    onClick = DEFAULT_ON_CLICK,
+    themeNamespace = DEFAULT_THEME_NAMESPACE,
+    className: classNameProp,
+    ...buttonProps
+  } = props;
   const [editor, ctx] = useLexicalComposerContext();
   const handleFormat = useTextFormattingAction(format, editor);
   const handleClick = useCallback(
@@ -134,10 +177,10 @@ const ToolbarFormattingButton = React.forwardRef<
     },
     [format, handleFormat],
   );
-  const theme = ctx.getTheme() ?? {};
+  const theme = (ctx.getTheme() ?? {}) as BaseThemeWithToolbarTheme;
   const className = classNames(
-    theme?.toolbar?.button?.formatting ?? "",
-    theme?.toolbar?.button?.[format] ?? "",
+    theme?.[themeNamespace]?.button?.formatting ?? "",
+    theme?.[themeNamespace]?.button?.[format] ?? "",
     classNameProp,
   );
 
@@ -175,4 +218,4 @@ export type {
   ToolbarButtonProps,
   ToolbarSeparatorProps,
   ToolbarFormattingButtonProps,
-}
+};

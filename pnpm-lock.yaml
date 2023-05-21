@@ -158,6 +158,51 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
 
+  packages/react/floating-toolbar:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.21.5
+        version: 7.21.5
+      '@lexi-kit/shell':
+        specifier: workspace:*
+        version: link:../shell
+      '@lexi-kit/toolbar':
+        specifier: workspace:*
+        version: link:../toolbar
+      '@lexi-kit/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@lexical/code':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/link':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/react':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.1)
+      '@lexical/rich-text':
+        specifier: ^0.10.0
+        version: 0.10.0(@lexical/clipboard@0.10.0)(@lexical/selection@0.10.0)(@lexical/utils@0.10.0)(lexical@0.10.0)
+      '@lexical/selection':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/utils':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
+      lexical:
+        specifier: '>=0.10.x'
+        version: 0.10.0
+      react:
+        specifier: '>=17.x'
+        version: 18.2.0
+      react-dom:
+        specifier: '>=17.x'
+        version: 18.2.0(react@18.2.0)
+
   packages/react/shared-context:
     dependencies:
       '@lexical/react':
