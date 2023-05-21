@@ -158,6 +158,51 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
 
+  packages/react/floating-toolbar:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.21.5
+        version: 7.21.5
+      '@lexi-kit/shell':
+        specifier: workspace:*
+        version: link:../shell
+      '@lexi-kit/toolbar':
+        specifier: workspace:*
+        version: link:../toolbar
+      '@lexi-kit/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@lexical/code':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/link':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/react':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.1)
+      '@lexical/rich-text':
+        specifier: ^0.10.0
+        version: 0.10.0(@lexical/clipboard@0.10.0)(@lexical/selection@0.10.0)(@lexical/utils@0.10.0)(lexical@0.10.0)
+      '@lexical/selection':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      '@lexical/utils':
+        specifier: ^0.10.0
+        version: 0.10.0(lexical@0.10.0)
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
+      lexical:
+        specifier: '>=0.10.x'
+        version: 0.10.0
+      react:
+        specifier: '>=17.x'
+        version: 18.2.0
+      react-dom:
+        specifier: '>=17.x'
+        version: 18.2.0(react@18.2.0)
+
   packages/react/shared-context:
     dependencies:
       '@lexical/react':
@@ -9135,6 +9180,7 @@ packages:
 
   /jsesc@0.5.0:
     resolution: {integrity: sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==}
+    hasBin: true
     dev: true
 
   /jsesc@2.5.2:
@@ -9786,6 +9832,7 @@ packages:
 
   /node-gyp-build-optional-packages@5.0.3:
     resolution: {integrity: sha512-k75jcVzk5wnnc/FMxsf4udAoTEUv2jY3ycfdSd3yWu6Cnd1oee6/CfZJApyscA4FJOmdoixWwiwOyf16RzD5JA==}
+    hasBin: true
     dev: true
 
   /node-gyp-build-optional-packages@5.0.7:
@@ -9795,6 +9842,7 @@ packages:
 
   /node-gyp-build@4.6.0:
     resolution: {integrity: sha512-NTZVKn9IylLwUzaKjkas1e4u2DLNcV4rdYagA4PWdPwW87Bi7z+BznyKSRwS/761tV/lzCGXplWsiaMjLqP2zQ==}
+    hasBin: true
     dev: true
 
   /node-int64@0.4.0:
@@ -10067,6 +10115,7 @@ packages:
   /parcel@2.8.3:
     resolution: {integrity: sha512-5rMBpbNE72g6jZvkdR5gS2nyhwIXaJy8i65osOqs/+5b7zgf3eMKgjSsDrv6bhz3gzifsba6MBJiZdBckl+vnA==}
     engines: {node: '>= 12.0.0'}
+    hasBin: true
     peerDependenciesMeta:
       '@parcel/core':
         optional: true
@@ -10810,6 +10859,7 @@ packages:
 
   /regjsparser@0.9.1:
     resolution: {integrity: sha512-dQUtn90WanSNl+7mQKcXAgZxvUe7Z0SqXlgzv0za4LwiUhyzBC58yQO3liFoUgu8GiJVInAhJjkj1N0EtQ5nkQ==}
+    hasBin: true
     dependencies:
       jsesc: 0.5.0
     dev: true
@@ -10998,10 +11048,12 @@ packages:
 
   /semver@5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
+    hasBin: true
     dev: true
 
   /semver@6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
+    hasBin: true
     dev: true
 
   /semver@7.0.0:
@@ -11209,6 +11261,7 @@ packages:
 
   /stable@0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
+    deprecated: 'Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility'
     dev: true
 
   /stack-utils@2.0.6:
@@ -11423,6 +11476,7 @@ packages:
   /svgo@2.8.0:
     resolution: {integrity: sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
     dependencies:
       '@trysound/sax': 0.2.0
       commander: 7.2.0
@@ -11540,6 +11594,7 @@ packages:
   /terser@5.17.3:
     resolution: {integrity: sha512-AudpAZKmZHkG9jueayypz4duuCFJMMNGRMwaPvQKWfxKedh8Z2x3OCoDqIIi1xx5+iwx1u6Au8XQcc9Lke65Yg==}
     engines: {node: '>=10'}
+    hasBin: true
     dependencies:
       '@jridgewell/source-map': 0.3.3
       acorn: 8.8.2

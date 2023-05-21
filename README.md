@@ -42,6 +42,8 @@ $ pnpm add @lexi-kit/utils @lexi-kit/toolbar
 
 - [x] `Toolbar` - The core toolbar package provides basic formatting buttons and a good foundation for creating an
   accessible formatting toolbar.
+- [x] `Floating-Toolbar` - A toolbar component that can be used to create floating toolbars that appear when the user
+  selects some text.
 - [x] `Utils` - A collection of utility functions that are used across the Lexi-kit library.
 - [x] `Shared-context` - A context to share the history state across the editor plugins.
 - [x] `Shell` - A package that exports primitives for dealing with the shell of a text editor.
@@ -54,6 +56,7 @@ I hope to have a proper documentation website soon, in the meantime you can find
 the packages/**package-name** folder.
 
 - [Toolbar](./packages/react/toolbar/README.md)
+- [Floating-Toolbar](./packages/react/floating-toolbar/README.md)
 - [Utils](./packages/react/utils/README.md)
 - [Shared-context](./packages/react/shared-context/README.md)
 - [Shell](./packages/react/shell/README.md)

@@ -139,11 +139,13 @@ A hook to apply color styling to the selected text.
 ```tsx
 const onClickRed = useTextColorAction('red', editor)
 // ...
-<Toolbar.Button
-  onClick={onClickRed}
->
+return (
+  <Toolbar.Button
+    onClick={onClickRed}
+  >
     Red text
-</Toolbar.Button>
+  </Toolbar.Button>
+)
 ```
 
 ### `useTextFormattingAction`
@@ -154,13 +156,15 @@ This hook exposes the behavior of the `Toolbar.FormattingButton` component.
 so you can use it to create your own custom formatting buttons.
 
 ```tsx
-const onClickBold = useTextFormattingAction('bold', editor)
+const onClickBold = useTextFormattingAction("bold", editor);
 // ...
-<Toolbar.Button
-  onClick={onClickBold}
->
+return (
+  <Toolbar.Button
+    onClick={onClickBold}
+  >
     Bold text
-</Toolbar.Button>
+  </Toolbar.Button>
+);
 ```
 
 ### `useTextFormattingStates`
