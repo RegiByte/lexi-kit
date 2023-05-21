@@ -1,6 +1,6 @@
 {
   "name": "@lexi-kit/shell",
-  "version": "0.0.4-next.3",
+  "version": "0.0.4-next.4",
   "description": "",
   "source": "src/index.ts",
   "main": "dist/index.js",
