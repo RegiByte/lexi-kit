@@ -1,6 +1,6 @@
 {
   "name": "@lexi-kit/floating-toolbar",
-  "version": "0.0.5-next.2",
+  "version": "0.0.5",
   "description": "",
   "source": "src/index.ts",
   "main": "dist/index.js",
