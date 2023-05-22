@@ -16,8 +16,8 @@
     "version": "pnpm version"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "RegiByte <github.com/RegiByte>",
+  "license": "MIT",
   "dependencies": {
     "@lexical/react": "^0.10.0",
     "@lexical/selection": "^0.10.0"
@@ -26,5 +26,13 @@
     "lexical": ">=0.10.x",
     "react": ">=17.x",
     "react-dom": ">=17.x"
+  },
+  "homepage": "https://github.com/RegiByte/lexi-kit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RegiByte/lexi-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RegiByte/lexi-kit/issues"
   }
 }

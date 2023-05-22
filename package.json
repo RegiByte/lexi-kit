@@ -20,8 +20,16 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
-  "author": "",
-  "license": "ISC",
+  "homepage": "https://github.com/RegiByte/lexi-kit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RegiByte/lexi-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RegiByte/lexi-kit/issues"
+  },
+  "author": "RegiByte <github.com/RegiByte>",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/plugin-transform-typescript": "^7.21.3",

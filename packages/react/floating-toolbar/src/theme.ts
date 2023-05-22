@@ -18,5 +18,5 @@ export interface FloatingToolbarTheme {
   button?: {
     default?: string; // default styles for all buttons
     formatting?: string; // styles for formatting buttons
-  } & Record<TextFormattingState, string | undefined>; // styles for each formatting button
+  } & Partial<Record<TextFormattingState, string>>; // styles for each formatting button
 }
