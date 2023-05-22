@@ -38,5 +38,13 @@
   },
   "devDependencies": {
     "@lexi-kit/shell": "workspace:*"
+  },
+  "homepage": "https://github.com/RegiByte/lexi-kit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RegiByte/lexi-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RegiByte/lexi-kit/issues"
   }
 }

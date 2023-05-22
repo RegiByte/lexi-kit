@@ -261,6 +261,9 @@ importers:
         specifier: '>=17.x'
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@lexi-kit/floating-toolbar':
+        specifier: workspace:*
+        version: link:../floating-toolbar
       '@lexi-kit/shell':
         specifier: workspace:*
         version: link:../shell
